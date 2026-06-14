@@ -1,39 +1,29 @@
 import streamlit as st
-import streamlit.components.v1 as stc
 
-from ml_app import run_ml_app
+st.set_page_config(
+    page_title="Employee Promotion Intelligence",
+    page_icon="📈",
+    layout="wide"
+)
 
-html_temp = """
-            <div>
-		    <h1 style="color:white;text-align:center;">Employee Promotion Prediction App </h1>
-		    <h2 style="color:white;text-align:center;">HR Team </h2>
-		    </div>
-            """
+with open("style.css") as f:
+    st.markdown(
+        f"<style>{f.read()}</style>",
+        unsafe_allow_html=True
+    )
 
-desc_temp = """
-            ### Employee Promotion Prediction App
-            This app will be used by the HR team to predict whether the employee get a promotion or not
-            #### Data Source
-            - https://raw.githubusercontent.com/densaiko/data_science_learning/main/dataset/Human%20Capital.csv
-            #### App Content
-            - Exploratory Data Analysis
-            - Machine Learning Section
-            """
+st.markdown("""
+<div class='hero-card'>
+<h1>🚀 Employee Promotion Intelligence</h1>
+<p>AI-Powered HR Analytics Dashboard</p>
+</div>
+""",
+unsafe_allow_html=True)
 
-def main():
+st.markdown("---")
 
-    stc.html(html_temp)
-    
-    menu = ['Home', 'Machine Learning']
-    choice = st.sidebar.selectbox("Menu", menu)
-
-    if choice == 'Home':
-        st.subheader("Welcome to Homepage")
-        st.markdown(desc_temp)
-    elif choice == "Machine Learning":
-        st.subheader("Welcome to Machine learning")
-        run_ml_app()
-
-
-if __name__ == '__main__':
-    main()
+st.info(
+"""
+Use the sidebar to navigate between dashboard pages.
+"""
+)
