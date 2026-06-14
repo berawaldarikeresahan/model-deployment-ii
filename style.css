@@ -1,0 +1,24 @@
+[data-testid="stAppViewContainer"]{
+    background:#0F172A;
+}
+
+[data-testid="stSidebar"]{
+    background:#111827;
+}
+
+.hero-card{
+    padding:30px;
+    border-radius:20px;
+    background:linear-gradient(
+        135deg,
+        #2563EB,
+        #7C3AED
+    );
+    color:white;
+}
+
+.stMetric{
+    background:#1E293B;
+    padding:15px;
+    border-radius:12px;
+}
