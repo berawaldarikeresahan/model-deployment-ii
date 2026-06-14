@@ -2,7 +2,7 @@ import streamlit as st
 
 st.title("📈 Model Performance")
 
-c1,c2,c3,c4 = st.columns(4)
+c1, c2, c3, c4 = st.columns(4)
 
 with c1:
     st.metric(
@@ -28,6 +28,9 @@ with c4:
         "95%"
     )
 
-st.image(
-    "assets/confusion_matrix.png"
+st.info(
+    """
+    Replace these metrics with actual values
+    from your trained model.
+    """
 )
