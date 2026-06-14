@@ -1,5 +1,4 @@
 import streamlit as st
-import plotly.express as px
 import pandas as pd
 
 st.title("📊 Executive Dashboard")
@@ -35,14 +34,8 @@ department_df = pd.DataFrame({
     ]
 })
 
-fig = px.bar(
-    department_df,
-    x="Department",
-    y="Promotion",
-    title="Promotion by Department"
-)
+st.subheader("Promotion by Department")
 
-st.plotly_chart(
-    fig,
-    use_container_width=True
+st.bar_chart(
+    department_df.set_index("Department")
 )
